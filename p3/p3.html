@@ -1,0 +1,451 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS536 Programming Assignment 3</title>
+<link rel="stylesheet" type="text/css" href="../../webpage.css">
+<style>
+<!--
+h1, h2, h3 { margin-top:0; margin-bottom:-10 }
+table.page   { align: center; width: 100%; border: no }
+p.navigation { font-size: 70%; color: #006600 }
+p.sectionDesc { font-size: 90%; font-weight: bold; color: #000080 }
+.subtitle { font-size: 70%; font-weight: normal; color: #006600 }
+.reg { font-size: 90% }
+.headerBG { background-color: #cde7f0 }
+.standoutBG { background-color: #e0f8ec }
+.regBG { background-color: #ffffff }
+.bottomStyle { font-size: 70%; color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body>
+
+<table class="page" cellpadding="8" cellspacing="0">
+
+<tr><td class="headerBG">
+<h1>CS536 Programming Assignment 3<br>
+<span class="subtitle">Lec 1, Spring 2013<br><br>
+<b>Due by 11:59 pm on Friday, April 5</b> (not accepted after 11:59 pm on Monday, April 8)</span></h1>
+
+<p class="navigation"><br>&nbsp;&nbsp;In this page:
+<a href="#Announcements">Announcements</a> |
+    <a href="#Overview">Overview</a> |
+    <a href="#Specifications">Specifications</a> |
+    <a href="#Handin">Handing in</a> |
+    <a href="#Grading">Grading criteria</a>
+    
+&nbsp;&nbsp;Related pages:
+<a href="../assignments.html">Assignments</a></p>
+</td></tr>
+
+<tr><td></td></tr> <!-- space between items -->
+
+<tr><td class="standoutBG">
+<h2 id="Announcements">Announcements</h2>
+<p class="sectionDesc">Check here periodically.</p>
+
+  <table> 
+
+
+    <tr valign="top">
+      <td>3/14/2013&nbsp;</td>
+      <td>Program released. To ask questions about the program and see questions posed by other students
+      and their answers, go to: 
+      <a href="http://piazza.com/class#spring2013/cs536" target='piazza'>http://piazza.com/class#spring2013/cs536</a>
+       and sign-in using your <em>wisc.edu</em> account.</td>
+    </tr>
+    
+  </table>
+
+</td></tr>
+
+<tr><td></td></tr> <!-- space between items -->
+
+<tr><td class="regBG">
+<h2 id="Overview">Overview</h2>
+<p class="reg">For this assignment you will use the parser-generator <b>Java Cup</b>
+to write a parser for the Mini language.
+The parser will find syntax errors, and for syntactically correct programs,
+it will build an abstract-syntax tree (AST) representation of the program.
+You will also write methods to <b>unparse</b> the AST built by
+your parser, and an input file to test your parser. A main program, 
+<a href="./files/P3.java"><tt>P3.java</tt></a>, that
+calls the parser and then the unparser is  provided for you to use.
+You will be graded on the correctness of your parser and your unparse methods,
+and on how thoroughly your input file tests the parser.
+In particular, you should write an input file that causes  the action associated with every grammar rule in your Java CUP specification to be executed at least once.</p>
+</td></tr>
+
+<tr><td></td></tr> <!-- space between items -->
+
+<tr><td class="regBG">
+<h2 id="Specifications">Specifications</h2>
+
+<ul class="reg">
+  <li> <a href="#starting">Getting started</a></li>
+  <li> <a href="#prec">Operator Precedences and Associativities</a></li>
+  <li> <a href="#ast">Building an AST</a></li>
+  <li> <a href="#unparsing">Unparsing</a></li>
+  <li> <a href="#astJava">Modifying <tt>ast.java</tt></a></li>
+  <li> <a href="#testing">Testing</a></li>
+  <li> <a href="#suggest">Suggestions for How to Work on This Assignment</a></li>
+</ul>
+
+<h3 id="starting">Getting Started</h3>
+<p class="reg">
+Skeleton files on which you should build are in:
+<tt>~cs536-1/public/html/assignments/p3/files</tt>
+</p>
+<p class="reg">
+The files are:
+</p>
+
+<ul class="reg">
+  <li><a href="./files/Mini.jlex"><tt>Mini.jlex</tt></a>:
+       A JLex specification for the Mini language (a solution to program 2).
+       Use this if there were problems with your JLex specification.</li>
+  <li><a href="./files/Mini.cup"><tt>Mini.cup</tt></a>:
+       A Java CUP specification for a very small subset of the Mini
+       language (you will need to add to this file).</li>
+  <li><a href="./files/Mini.grammar"><tt>Mini.grammar</tt></a>:
+       A CFG for the Mini language.  Use this to guide the enhancements
+       you make to <tt>Mini.cup</tt>.</li>
+  <li><a href="./files/ast.java"><tt>ast.java</tt></a>:
+       Contains class definitions for the AST structure that the parser
+       will build (you will need to add unparsing code to this file, but         you should <em>not</em> add any new classes, fields, or methods).</li>
+  <li><a href="./files/P3.java"><tt>P3.java</tt></a>:
+       The main program that calls the parser, then, for a successful
+       parse, calls the unparser (no changes needed).
+       To compile P3 then run it, using <tt>test.Mini</tt> as the input,
+       and sending the unparsed output to file <tt>test.out</tt>,
+       type:
+       <dir><tt>javac P3.java <br>
+               java P3 test.Mini test.out </tt></dir>
+       
+       </li>
+  <li><a href="./files/Makefile"><tt>Makefile</tt></a>: A Makefile for
+       program 3 (no changes needed).</li>
+  <li><a href="./files/test.Mini"><tt>test.Mini</tt></a>:
+       Input for the current version of the parser (you will need to
+       change this file).</li>
+  <li><a href="./files/Errors.java"><tt>Errors.java</tt></a>:
+       Same as for program 2 (no changes needed).</li>
+</ul>
+
+<p class="reg">
+Here is a link to the Java CUP
+<a href="http://www.cs.princeton.edu/~appel/modern/java/CUP/manual.html">
+reference manual</a>. There is also a link in the "Tools" section of the "Quick Links" menu on the course website.</p>
+
+<h3 id="prec">Operator Precedences and Associativities</h3>
+<p class="reg">
+The Mini grammar in the file <tt>Mini.grammar</tt> is ambiguous;
+it does not uniquely define the precedences and associativities of
+the arithmetic, relational, equality, and logical operators.
+You will need to add appropriate precedence and associativity declarations
+to your Java CUP specification.
+<ul>
+  <li><p class="reg">Assignment is right associative.</p></li>
+ 
+  <li><p class="reg">The relational
+    and equality operators (&lt;, &gt;, &lt;=, &gt;=, ==, and !=) are
+    non-associative (i.e., expressions like <tt>a &lt; b &lt; c</tt>
+    are not allowed and should cause a syntax error).
+    </p></li>
+    
+  <li><p class="reg">All of the other binary operators are left associative. 
+  </p></li>
+  
+    <li><p class="reg">The unary minus and not (!) operators have the highest
+       precedence, then multiplication and division,
+       then addition and subtraction,
+       then the relational and equality operators, then the logical
+       <i>and</i> operator (&amp;&amp;), then the logical <i>or</i> operator (||), and finally the assignment operator (=).
+       </p></li>
+</ul>
+<p class="reg">
+Note that the same token (MINUS) is used for both the unary and binary minus 
+operator, and that they have different precedences;
+however, the Mini grammar has been written so that the unary minus operator
+has the correct (highest) precedence;
+therefore, you can declare MINUS to have
+the precedence appropriate for the binary minus operator.</p>
+<p class="reg">
+Java Cup will print a message telling you how many <em>conflicts</em>
+it found in your grammar.
+If the number is not zero, it means that your grammar is still
+ambiguous, and the parser is unlikely to work correctly.
+<b>Do not ignore this!</b>
+Go back and fix your specification so that your grammar is not ambiguous.
+</p>
+
+<h3 id="ast">Building an Abstract-Syntax Tree</h3>
+<p class="reg">
+To make your parser build an abstract-syntax tree, you must add new
+productions, declarations, and actions to <tt>Mini.cup</tt>.
+You will need to decide, for each nonterminal that you add, what
+type its associated value should have.
+Then you must add the appropriate nonterminal
+declaration to the specification.
+For most nonterminals, the value will either be some kind of tree node
+(a subclass of <tt>ASTnode</tt>) or a <tt>LinkedList</tt>
+of some kind of node
+(use the information in <tt>ast.java</tt> to guide your decision).
+Note that you cannot use parameterized types for the types of  nonterminals;  so if the translation of a nonterminal is a <tt>LinkedList</tt>  of some kind of node, you will have to declare its type as  just plain <tt>LinkedList</tt>.  </p>
+<p class="reg">You must also add actions to each new grammar production that you add to <tt>Mini.cup</tt>. Make sure that each action ends by  assigning
+  an appropriate value to <tt>RESULT</tt>.
+  Note that the parser will return a <tt>Symbol</tt> whose <tt>value</tt>
+  field contains the value assigned to <tt>RESULT</tt> in the production
+  for the root nonterminal (nonterminal <tt>program</tt>).
+</p>
+
+
+<h3 id="unparsing">Unparsing</h3>
+<p class="reg">
+To test your parser, you must write the <tt>unparse</tt>
+methods for the subclasses of <tt>ASTnode</tt> (in the file <tt>ast.java</tt>).
+When the <tt>unparse</tt> method of the root node of the program's
+abstract-syntax tree is called, it should print a nicely formatted
+version of the program (this is called <em>unparsing</em>
+the abstract-syntax tree).
+The output produced by calling <tt>unparse</tt> should be the
+same as the input to the parser except that:
+</p>
+<ol class="reg">
+  <li>There will be no comments in the output.</li>
+  <li>The output will be &quot;pretty printed&quot; (newlines and indentation
+       will be used to make the program readable); and</li>
+  <li> Expressions will be fully parenthesized to reflect the order of
+       evaluation.</li>
+</ol>
+
+<p class="reg">
+For example, if the input program includes:
+</p>
+<dir>
+<pre>if (b == -1) { x = 4+3*5-y; while (c) { y = y*2+x; } } else { x = 0; }
+</pre>
+</dir>
+<p class="reg">
+the output of <tt>unparse</tt> should be something like the following:
+</p>
+<dir>
+<pre>if ((b == (-1))) {
+    x = ((4 + (3 * 5)) - y);
+    while (c) {
+        y = ((y * 2) + x);
+    }
+}
+else {
+    x = 0;
+}
+</pre>
+</dir>
+<p class="reg">
+To make grading easier, put open curly braces on the <em>same</em>
+line as the preceding code and put closing curly braces on a line with no
+other code (as in the example above).
+Put the first statement in the body of an <tt>if</tt> or <tt>while</tt>
+on the line following the open curly brace.
+Whitespace within a line is up to you (as long as it looks reasonable).
+</p>
+<p class="reg">
+Note: Trying to unparse a tree will help you determine whether you have
+built the tree correctly in the first place.
+Besides looking at the output of your unparser, you should try
+using it as the input to your parser;
+if it doesn't parse, you've made a mistake either in how you built
+your abstract-syntax tree or in how you've written your unparser.
+</p>
+<p class="reg">
+Another good way to test your code is to try compiling the output
+of your unparser using the C++ compiler (g++).
+If your input program uses I/O (<tt>cin</tt> or <tt>cout</tt>),
+you will first need to add: <tt>#include &lt;iostream&gt;</tt>
+at the beginning of the file.
+</p>
+<p class="reg">
+It is a good idea to work incrementally
+ (see <a href="#suggest">Suggestions for How to Work on This Assignment</a> below for more detailed suggestions):
+ </p>
+<ul class="reg">
+  <li>Add a few grammar productions to <tt>Mini.cup</tt>.
+  <li>Write the corresponding <tt>unparse</tt> operations.
+  <li>Write a test program that uses the new language constructs.
+  <li>Create a parser (using <tt>make</tt>) and run it on your test program.
+</ul>
+
+
+<h3 id="astJava">Modifying <tt>ast.java</tt></h3>
+<p class="reg">
+We will test your program by using our <tt>unparse</tt>
+methods on your abstract-syntax trees and by using your <tt>unparse</tt> methods
+on our abstract-syntax trees.
+To make this work, you will need to:
+</p>
+<ol class="reg">
+  <li>Modify <tt>ast.java</tt> <b>only</b> by filling in
+       the bodies of the <tt>unparse</tt> methods (and you must fill in all of the
+       method bodies).
+  <li>Make sure that no <tt>LinkedList</tt> field is null (i.e., when you call the
+       constructor of a class with a <tt>LinkedList</tt> argument, that argument should
+       never be null).
+       Note that it is OK to make the <tt>ExpNode</tt> field of a <tt>ReturnStmtNode</tt> null
+       (when no value is returned), likewise for the <tt>ExpListNode</tt> field of a <tt>CallExpNode</tt> (when the call has no arguments).
+  <li>Follow the convention that the <tt>mySize</tt> field of a
+       <tt>VarDeclNode</tt> has the value <tt>VarDeclNode.NOT_ARRAY</tt> if the type
+       of the declared variable
+       is a non-array type (i.e., if the declaration did not include
+       square brackets).
+</ol>
+
+
+<h3 id="testing">Testing</h3>
+<p class="reg">
+Part of your task will be to write an input file called <tt>test.Mini</tt> that thoroughly
+tests your parser and your unparser.
+You should be sure to include code that corresponds to every grammar  rule in the file <tt>Mini.grammar</tt>.  
+</p>
+<p class="reg">Note that since you are to provide only <em>one</em> input file,
+  <tt>test.Mini</tt> should contain no syntax errors (you should also test your
+  parser on some bad inputs, but don't hand those in).
+</p>
+<p class="reg">You will probably find it helpful to use comments  in <tt>test.Mini</tt> to explain what aspects of the parser are  being tested, but your testing grade will depend only on how  thoroughly the file tests the parser.</p>
+<h3 id="suggest">Suggestions for How to Work on This Assignment</h3>
+<p class="reg">
+This assignment involves three main tasks:
+</p>
+<ol class="reg">
+  <li>Writing the parser specification (<tt>Mini.cup</tt>).</li>
+  <li>Writing the unparse methods for the AST nodes (in <tt>ast.java</tt>).</li>
+  <li>Writing an input file (<tt>test.Mini</tt>) to test your implementation.</li>
+</ol>
+<p class="reg">
+If you work with a partner,  it is a good idea to share responsibility for all tasks  to ensure that both partners understand all aspects of the assignment.
+</p>
+<p class="reg">
+I suggest that you proceed as follows, testing your parser
+after each change
+(if you are working alone, I still suggest that you follow the basic steps outlined below, just do them all yourself):
+</p>
+<ul>
+  <li><p class="reg">Working together, start by making a very small change
+       to <tt>Mini.cup</tt>.
+       For example, add the rules and actions for:</p>
+       <dir><pre>type ::= BOOL
+type ::= VOID</pre></dir>
+<p class="reg">
+       Also update the appropriate <tt>unparse</tt> method in
+       <tt>ast.java</tt>.
+       Make sure that you can create and run the parser after making
+       this small change.
+         (To create the parser, just type <tt>make</tt> in the directory         where you are working.)
+         </p></li>
+  <li><p class="reg">Next, add the rules needed to allow array declarations.
+  </p></li>
+  <li>
+    <p class="reg">Next, add the rules needed to allow programs to include functions
+       with no formal parameters and with empty statement lists only, and update the
+       corresponding <tt>unparse</tt> methods.
+       </p></li>
+  <li><p class="reg">Still working together, add the rules (and <tt>unparse</tt> methods)
+       for the simplest kind of expressions -- just plain identifiers.
+       </p></li>
+  <li><p class="reg">Now divide up the statement nonterminals into two parts, one part for
+       each person.
+       </p></li>
+  <li><p class="reg">Each person should extend their own copy of <tt>Mini.cup</tt>
+       by adding rules for their half of the statements, and should extend
+       their own copy of <tt>ast.java</tt> to define the unparse methods
+       needed for those statements.
+       </p></li>
+  <li>
+    <p class="reg">Write test inputs for your statements and your partner's statements.
+  </p></li>
+  <li><p class="reg">After each person makes sure that their parser and unparser
+       work on their own statements, combine the two by cutting and
+       pasting one person's grammar rules into the other person's
+       <tt>Mini.cup</tt> (and similarly for <tt>ast.java</tt>).
+       </p></li>
+  <li><p class="reg">Now divide up the expression nonterminals into two parts, and
+       implement those using a similar approach.
+       Note that you will also need to give the operators the right
+       precedences and associativities during this step (see
+       <a href="#prec">above</a>).
+       </p></li>
+  <li><p class="reg">Divide up any remaining productions that need to be added,
+       and add them.
+       </p></li>
+  <li>
+    <p class="reg">Talk about what needs to be tested, and decide together what your
+       final version of <tt>test.Mini</tt> should include.
+       </p></li>
+  <li>
+    <p class="reg">When working on your own, do <em>not</em> try to implement all of
+       your nonterminals at once.  Instead, add one new rule at a time
+       to the Java CUP specification, make the corresponding changes
+       to the <tt>unparse</tt> methods in <tt>ast.java</tt>, and test
+       your work by augmenting your <tt>test.Mini</tt> or by writing a Mini
+       program that includes the new construct you added, and make sure
+       that it is parsed and unparsed correctly.</p></li>
+</ul>
+<p class="reg">
+If you worked alone on the previous program and are now working with
+a partner, see programming assignment 2 for more suggestions on how to work in pairs.
+</td>
+</tr>
+
+<tr><td></td></tr> <!-- space between items -->
+
+<tr><td class="regBG">
+<h2 id="Handin">Handing in</h2>
+    
+    <p class="reg"><a href="../assignments.html#Handin">Electronically submit</a> 
+    all of the files that are needed to
+create and run your parser and your main program (including your <tt>test.Mini</tt>) as well as your <tt>Makefile</tt> to your <b><tt>In</tt></b> "handin" directory by April 5 at 11:59 pm
+    (or refer to the <a href="../assignments.html#Late">late policy</a>).</p>
+
+
+    <p class="reg"><em><b>Do not turn in any <tt>.class</tt> files and do not create any subdirectories in your
+    <tt>In</tt> handin directory.</b></em> If you accidentally turn in (or create) extra files or
+    subdirectories, please remove them from your handin directory.</p>
+
+	<p class="reg">If you are working with a partner <b>only one</b> of you should hand in program files
+    but <b>both</b> partners must complete and hand in the 
+    <a href="../README.txt"><tt>README.txt</tt></a> file.</p>
+ 
+</td></tr>
+
+<tr><td></td></tr> <!-- space between items -->
+
+<tr><td class="regBG">
+<h2 id="Grading">Grading criteria</h2>
+<p class="reg">
+General information on <a href="../program-grading.html">program
+grading criteria</a> is provided via this link (which can also
+be found on the <a href="../assignments.html">Assignments</a> page).
+</p>
+<p class="reg">
+For more advice on Java programming style, see
+<a href="http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html">
+Code Conventions for the Java Programming Language.</a>
+See also the
+    <a href="http://www.cs.wisc.edu/~cs302/resources/guides/style.html">style</a> and
+    <a href="http://www.cs.wisc.edu/~cs302/resources/guides/commenting.html">commenting</a>
+    standards used in CS 302 and CS 367.
+</p>
+</td></tr>
+
+<tr>
+  <td class="bottomStyle">
+  Last Updated: 3/13/2013&nbsp;&nbsp;&nbsp;&nbsp; 
+&copy; 2013 Beck Hasti</td>
+</tr>
+</table>
+</body>
+
+</html>
