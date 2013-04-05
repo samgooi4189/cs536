@@ -1,0 +1,3 @@
+5:1 **ERROR** ignoring illegal character: [
+6:1 **ERROR** ignoring illegal character: ]
+14:1 **ERROR** ignoring illegal character: !

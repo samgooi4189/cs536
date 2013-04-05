@@ -1,0 +1,40 @@
+Type: ID
+LineNum: 1
+CharNum: 2
+Value: n
+
+Type: ID
+LineNum: 2
+CharNum: 2
+Value: t
+
+Type: ID
+LineNum: 5
+CharNum: 2
+Value: n
+
+Type: ID
+LineNum: 5
+CharNum: 5
+Value: t
+
+Type: ID
+LineNum: 6
+CharNum: 2
+Value: t
+
+Type: ID
+LineNum: 6
+CharNum: 5
+Value: n
+
+Type: ID
+LineNum: 6
+CharNum: 8
+Value: t
+
+Type: ID
+LineNum: 6
+CharNum: 11
+Value: t
+

@@ -1,0 +1,50 @@
+Type: INTLITERAL
+LineNum: 1
+CharNum: 1
+Value: 123
+
+Type: INTLITERAL
+LineNum: 2
+CharNum: 1
+Value: 1234
+
+Type: INTLITERAL
+LineNum: 3
+CharNum: 1
+Value: 12345
+
+Type: INTLITERAL
+LineNum: 4
+CharNum: 1
+Value: 23
+
+Type: INTLITERAL
+LineNum: 5
+CharNum: 1
+Value: 234
+
+Type: INTLITERAL
+LineNum: 6
+CharNum: 1
+Value: 2345
+
+Type: INTLITERAL
+LineNum: 7
+CharNum: 1
+Value: 23456
+
+Type: INTLITERAL
+LineNum: 8
+CharNum: 1
+Value: 34
+
+Type: INTLITERAL
+LineNum: 9
+CharNum: 1
+Value: 345
+
+Type: INTLITERAL
+LineNum: 10
+CharNum: 1
+Value: 3456
+

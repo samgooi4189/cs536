@@ -1,0 +1,84 @@
+Type: LCURLY
+LineNum: 1
+CharNum: 1
+
+Type: RCURLY
+LineNum: 2
+CharNum: 1
+
+Type: LPAREN
+LineNum: 3
+CharNum: 1
+
+Type: RPAREN
+LineNum: 4
+CharNum: 1
+
+Type: COMMA
+LineNum: 7
+CharNum: 1
+
+Type: ASSIGN
+LineNum: 8
+CharNum: 1
+
+Type: SEMICOLON
+LineNum: 9
+CharNum: 1
+
+Type: PLUS
+LineNum: 10
+CharNum: 1
+
+Type: MINUS
+LineNum: 11
+CharNum: 1
+
+Type: TIMES
+LineNum: 12
+CharNum: 1
+
+Type: DIVIDE
+LineNum: 13
+CharNum: 1
+
+Type: AND
+LineNum: 15
+CharNum: 1
+
+Type: OR
+LineNum: 16
+CharNum: 1
+
+Type: EQUALS
+LineNum: 17
+CharNum: 1
+
+Type: NOTEQUALS
+LineNum: 18
+CharNum: 1
+
+Type: LESS
+LineNum: 19
+CharNum: 1
+
+Type: GREATER
+LineNum: 20
+CharNum: 1
+
+Type: LESSEQ
+LineNum: 21
+CharNum: 1
+
+Type: GREATEREQ
+LineNum: 22
+CharNum: 1
+
+Type: READ
+LineNum: 23
+CharNum: 1
+
+Type: WRITE
+LineNum: 24
+CharNum: 1
+

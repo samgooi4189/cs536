@@ -1,0 +1,50 @@
+Type: STRINGLITERAL
+LineNum: 1
+CharNum: 1
+Value: ""
+
+Type: STRINGLITERAL
+LineNum: 2
+CharNum: 1
+Value: "&!88"
+
+Type: STRINGLITERAL
+LineNum: 3
+CharNum: 1
+Value: "use \n to denote a newline character"
+
+Type: STRINGLITERAL
+LineNum: 4
+CharNum: 1
+Value: "include a quote like this \" and a backslash like this \\"
+
+Type: STRINGLITERAL
+LineNum: 5
+CharNum: 1
+Value: " HI this is great \t "
+
+Type: STRINGLITERAL
+LineNum: 6
+CharNum: 1
+Value: " Yep i think it works "
+
+Type: STRINGLITERAL
+LineNum: 7
+CharNum: 1
+Value: " Good morning 5664"
+
+Type: STRINGLITERAL
+LineNum: 8
+CharNum: 1
+Value: "Hello, how are you? 3543"
+
+Type: STRINGLITERAL
+LineNum: 9
+CharNum: 1
+Value: "Oh yeah !345;"
+
+Type: STRINGLITERAL
+LineNum: 10
+CharNum: 1
+Value: "University of Wisconsin-Madison :[] "
+

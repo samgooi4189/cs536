@@ -1,0 +1,8 @@
+1:1 **ERROR** ignoring illegal character: \
+2:1 **ERROR** ignoring illegal character: \
+5:1 **ERROR** ignoring illegal character: \
+5:4 **ERROR** ignoring illegal character: \
+6:1 **ERROR** ignoring illegal character: \
+6:4 **ERROR** ignoring illegal character: \
+6:7 **ERROR** ignoring illegal character: \
+6:10 **ERROR** ignoring illegal character: \

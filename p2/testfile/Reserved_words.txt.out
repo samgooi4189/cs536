@@ -1,0 +1,40 @@
+Type: BOOL
+LineNum: 1
+CharNum: 1
+
+Type: INT
+LineNum: 2
+CharNum: 1
+
+Type: VOID
+LineNum: 3
+CharNum: 1
+
+Type: TRUE
+LineNum: 4
+CharNum: 1
+
+Type: FALSE
+LineNum: 5
+CharNum: 1
+
+Type: IF
+LineNum: 6
+CharNum: 1
+
+Type: ELSE
+LineNum: 7
+CharNum: 1
+
+Type: RETURN
+LineNum: 8
+CharNum: 1
+
+Type: CIN
+LineNum: 9
+CharNum: 1
+
+Type: COUT
+LineNum: 10
+CharNum: 1
+

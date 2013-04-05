@@ -1,0 +1,2 @@
+in the terminal, type:
+sh runtest.sh

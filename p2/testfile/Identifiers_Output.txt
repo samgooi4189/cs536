@@ -1,0 +1,50 @@
+Type: ID
+LineNum: 1
+CharNum: 1
+Value: string
+
+Type: ID
+LineNum: 2
+CharNum: 1
+Value: string345
+
+Type: ID
+LineNum: 3
+CharNum: 1
+Value: _45string
+
+Type: ID
+LineNum: 4
+CharNum: 1
+Value: _34string
+
+Type: ID
+LineNum: 5
+CharNum: 1
+Value: string345string
+
+Type: ID
+LineNum: 6
+CharNum: 1
+Value: _34string45
+
+Type: ID
+LineNum: 7
+CharNum: 1
+Value: _43string_string
+
+Type: ID
+LineNum: 8
+CharNum: 1
+Value: _54stringstring_
+
+Type: ID
+LineNum: 9
+CharNum: 1
+Value: _35string_45
+
+Type: ID
+LineNum: 10
+CharNum: 1
+Value: _34_string_345
+

@@ -1,0 +1,65 @@
+Type: ID
+LineNum: 1
+CharNum: 1
+Value: IamSureLengthdoesnotmattertoitbecauzeifitdoesthenitwontworkwhatdoyousay
+
+Type: INTLITERAL
+LineNum: 2
+CharNum: 1
+Value: 2147483647
+
+Type: INTLITERAL
+LineNum: 3
+CharNum: 1
+Value: 2147483647
+
+Type: INTLITERAL
+LineNum: 4
+CharNum: 1
+Value: 2147483647
+
+Type: INTLITERAL
+LineNum: 5
+CharNum: 1
+Value: 2147483647
+
+Type: INTLITERAL
+LineNum: 6
+CharNum: 1
+Value: 2147483647
+
+Type: INTLITERAL
+LineNum: 7
+CharNum: 1
+Value: 2147483647
+
+Type: ID
+LineNum: 7
+CharNum: 15
+Value: wertsetg46346bh4w62462
+
+Type: INTLITERAL
+LineNum: 8
+CharNum: 1
+Value: 23634
+
+Type: ID
+LineNum: 8
+CharNum: 6
+Value: bhbjhnv7bbnbjj23b58j990235
+
+Type: INTLITERAL
+LineNum: 9
+CharNum: 1
+Value: 2147483647
+
+Type: INTLITERAL
+LineNum: 10
+CharNum: 1
+Value: 235
+
+Type: ID
+LineNum: 10
+CharNum: 4
+Value: u925jn9jn2395ki3n8n
+

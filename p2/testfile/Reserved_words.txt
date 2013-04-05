@@ -1,0 +1,11 @@
+bool
+int
+void
+true
+false
+if
+else
+return
+cin
+cout
+

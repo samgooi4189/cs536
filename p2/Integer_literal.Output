@@ -1,0 +1,49 @@
+Type: IntLitTokenVal
+LineNum: 1
+CharNum: 1
+Value: 123
+
+Type: IntLitTokenVal
+LineNum: 2
+CharNum: 1
+Value: 1234
+
+Type: IntLitTokenVal
+LineNum: 3
+CharNum: 1
+Value: 12345
+
+Type: IntLitTokenVal
+LineNum: 4
+CharNum: 1
+Value: 23
+
+Type: IntLitTokenVal
+LineNum: 5
+CharNum: 1
+Value: 234
+
+Type: IntLitTokenVal
+LineNum: 6
+CharNum: 1
+Value: 2345
+
+Type: IntLitTokenVal
+LineNum: 7
+CharNum: 1
+Value: 23456
+
+Type: IntLitTokenVal
+LineNum: 8
+CharNum: 1
+Value: 34
+
+Type: IntLitTokenVal
+LineNum: 9
+CharNum: 1
+Value: 345
+
+Type: IntLitTokenVal
+LineNum: 10
+CharNum: 1
+Value: 3456
